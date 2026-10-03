@@ -1,0 +1,294 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 1073741824 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3583), pid=7808, tid=11712
+#
+# JRE version:  (26.0.2+10) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (26.0.2+10-55, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dosgi.checkConfiguration=true -Dosgi.sharedConfiguration.area=C:/Users/Admin/AppData/Local/Zed/extensions/work/java/jdtls/1.61.0/config_win -Dosgi.sharedConfiguration.area.readOnly=true -Dosgi.configuration.cascaded=true -Djava.import.generatesMetadataFilesAtProjectRoot=false -Djava.net.preferIPv4Stack=true -Xms1G --add-modules=ALL-SYSTEM --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:C:/Users/Admin/AppData/Local/Zed/extensions/work/java/lombok/lombok-1.18.48.jar C:/Users/Admin/AppData/Local/Zed/extensions/work/java/jdtls/1.61.0/plugins/org.eclipse.equinox.launcher_1.8.0.v20260804-1928.jar -data C:\Users\Admin\AppData\Roaming/jdtls-711a4d295c43b7523bf46a0af055adda72f57ff5 -Djdk.xml.maxGeneralEntitySizeLimit=0 -Djdk.xml.totalEntitySizeLimit=0
+
+Host: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+Time: Thu Oct  1 15:36:58 2026 India Standard Time elapsed time: 0.033369 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001f0fb964460):  JavaThread "Unknown thread" [_thread_in_vm, id=11712, stack(0x0000006619200000,0x0000006619300000) (1024K)]
+
+Stack: [0x0000006619200000,0x0000006619300000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x7d6ea9]  (no source info available)
+V  [jvm.dll+0x7a4dcd]  (no source info available)
+V  [jvm.dll+0x9b2390]  (no source info available)
+V  [jvm.dll+0x9b47e1]  (no source info available)
+V  [jvm.dll+0x9b4ef3]  (no source info available)
+V  [jvm.dll+0x30f4d6]  (no source info available)
+V  [jvm.dll+0x7d6375]  (no source info available)
+V  [jvm.dll+0x7c9517]  (no source info available)
+V  [jvm.dll+0x40a228]  (no source info available)
+V  [jvm.dll+0x412596]  (no source info available)
+V  [jvm.dll+0x3fe934]  (no source info available)
+V  [jvm.dll+0x3fec25]  (no source info available)
+V  [jvm.dll+0x3d55af]  (no source info available)
+V  [jvm.dll+0x3d63fd]  (no source info available)
+V  [jvm.dll+0x977589]  (no source info available)
+V  [jvm.dll+0x46f782]  (no source info available)
+V  [jvm.dll+0x95a62f]  (no source info available)
+V  [jvm.dll+0x512c01]  (no source info available)
+V  [jvm.dll+0x5146c1]  (no source info available)
+C  [jli.dll+0x54a6]  (no source info available)
+C  [ucrtbase.dll+0x21bb2]  (no source info available)
+C  [KERNEL32.DLL+0x17374]  (no source info available)
+C  [ntdll.dll+0x4cc91]  (no source info available)
+
+Lock stack of current Java thread (top to bottom):
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffc29ce9298, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000001f0fb9b1970 WorkerThread "GC Thread#0"                     [id=4892, stack(0x0000006619300000,0x0000006619400000) (1024K)]
+  0x000001f0fb9cb080 ConcurrentGCThread "G1 Main Marker"            [id=19168, stack(0x0000006619400000,0x0000006619500000) (1024K)]
+  0x000001f0fb9cbc00 WorkerThread "G1 Conc#0"                       [id=17716, stack(0x0000006619500000,0x0000006619600000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffc2937b0ca]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffc29d72088] Heap_lock - owner thread: 0x000001f0fb964460
+
+Heap address: 0x0000000702200000, size: 4062 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+Narrow klass pointer bits 32, Max shift 3
+Narrow klass base: 0xffffffffffffffff, Narrow klass shift: -1
+Encoding Range: [0xffffffffffffffff - 0x000000007fffffff), (2147483648 bytes)
+Klass Range:    [0x0000000000000000 - 0x0000000000000000), (0 bytes)
+Klass ID Range:  [4294967295 - 0) (1)
+No protection zone.
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total reserved 4159488K, committed 0K, used 0K [0x0000000702200000, 0x0000000800000000)
+  region size 2M, 0 eden (0M), 0 survivor (0M), 0 old (0M), 0 humongous (0M), 0 free (0M)
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TAMS=top-at-mark-start, PB=parsable bottom
+
+Card table byte_map: [0x000001f0fc650000,0x000001f0fce40000] _byte_map_base: 0x000001f0f8e3f000
+Refinement table byte_map: [0x000001f0fce40000,0x000001f0fd630000] _byte_map_base: 0x000001f0f962f000
+
+Marking Bits: (CMBitMap*) 0x000001f0fb9b2900
+ Bits: [0x000001f097c10000, 0x000001f09bb88000)
+
+GC Heap Usage History (0 events):
+No events
+
+Metaspace Usage History (0 events):
+No events
+
+Dll operation events (2 events):
+Event: 0.025 Attempting to load shared library C:\Program Files\Java\jdk-26.0.2\bin\java.dll
+Event: 0.025 Loaded shared library C:\Program Files\Java\jdk-26.0.2\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6f9d40000 - 0x00007ff6f9d50000 	C:\Program Files\Java\jdk-26.0.2\bin\java.exe
+0x00007ffd18750000 - 0x00007ffd18948000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffd16d30000 - 0x00007ffd16df2000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffd16360000 - 0x00007ffd16656000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffd0ee90000 - 0x00007ffd0ef24000 	C:\Windows\SYSTEM32\apphelp.dll
+0x00007ffd15de0000 - 0x00007ffd15ee0000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffce7970000 - 0x00007ffce798e000 	C:\Program Files\Java\jdk-26.0.2\bin\VCRUNTIME140.dll
+0x00007ffcecb50000 - 0x00007ffcecb67000 	C:\Program Files\Java\jdk-26.0.2\bin\jli.dll
+0x00007ffd17a10000 - 0x00007ffd17bb1000 	C:\Windows\System32\USER32.dll
+0x00007ffd15ee0000 - 0x00007ffd15f02000 	C:\Windows\System32\win32u.dll
+0x00007ffd01000000 - 0x00007ffd0129b000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6456_none_60b8a6cb71f64256\COMCTL32.dll
+0x00007ffd16770000 - 0x00007ffd1679b000 	C:\Windows\System32\GDI32.dll
+0x00007ffd17970000 - 0x00007ffd17a0e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffd15fb0000 - 0x00007ffd160c9000 	C:\Windows\System32\gdi32full.dll
+0x00007ffd15f10000 - 0x00007ffd15fad000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffd16870000 - 0x00007ffd1689f000 	C:\Windows\System32\IMM32.DLL
+0x00007ffd0cd90000 - 0x00007ffd0cd9c000 	C:\Program Files\Java\jdk-26.0.2\bin\vcruntime140_1.dll
+0x00007ffcd4610000 - 0x00007ffcd469d000 	C:\Program Files\Java\jdk-26.0.2\bin\msvcp140.dll
+0x00007ffc28f90000 - 0x00007ffc29e61000 	C:\Program Files\Java\jdk-26.0.2\bin\server\jvm.dll
+0x00007ffd17ec0000 - 0x00007ffd17f71000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffd16960000 - 0x00007ffd169ff000 	C:\Windows\System32\sechost.dll
+0x00007ffd16c10000 - 0x00007ffd16d30000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffd16330000 - 0x00007ffd16357000 	C:\Windows\System32\bcrypt.dll
+0x00007ffd17570000 - 0x00007ffd175db000 	C:\Windows\System32\WS2_32.dll
+0x00007ffd15c40000 - 0x00007ffd15c8b000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007ffd00fd0000 - 0x00007ffd00ff7000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffd0cf50000 - 0x00007ffd0cf5a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffd15c20000 - 0x00007ffd15c32000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ffd145f0000 - 0x00007ffd14602000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffcf3620000 - 0x00007ffcf362a000 	C:\Program Files\Java\jdk-26.0.2\bin\jimage.dll
+0x00007ffd10ae0000 - 0x00007ffd10ce1000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffcf3440000 - 0x00007ffcf3474000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffd166e0000 - 0x00007ffd16762000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffd0cd60000 - 0x00007ffd0cd70000 	C:\Program Files\Java\jdk-26.0.2\bin\instrument.dll
+0x00007ffce6250000 - 0x00007ffce626f000 	C:\Program Files\Java\jdk-26.0.2\bin\java.dll
+0x00007ffd17fe0000 - 0x00007ffd1810b000 	C:\Windows\System32\ole32.dll
+0x00007ffd17600000 - 0x00007ffd17954000 	C:\Windows\System32\combase.dll
+0x00007ffd16e00000 - 0x00007ffd17570000 	C:\Windows\System32\SHELL32.dll
+
+JVMTI agents:
+C:/Users/Admin/AppData/Local/Zed/extensions/work/java/lombok/lombok-1.18.48.jar path:none, loaded, not initialized, instrumentlib options:none
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-26.0.2\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6456_none_60b8a6cb71f64256;C:\Program Files\Java\jdk-26.0.2\bin\server
+
+VM Arguments:
+jvm_args: -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dosgi.checkConfiguration=true -Dosgi.sharedConfiguration.area=C:/Users/Admin/AppData/Local/Zed/extensions/work/java/jdtls/1.61.0/config_win -Dosgi.sharedConfiguration.area.readOnly=true -Dosgi.configuration.cascaded=true -Djava.import.generatesMetadataFilesAtProjectRoot=false -Djava.net.preferIPv4Stack=true -Xms1G --add-modules=ALL-SYSTEM --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:C:/Users/Admin/AppData/Local/Zed/extensions/work/java/lombok/lombok-1.18.48.jar 
+java_command: C:/Users/Admin/AppData/Local/Zed/extensions/work/java/jdtls/1.61.0/plugins/org.eclipse.equinox.launcher_1.8.0.v20260804-1928.jar -data C:\Users\Admin\AppData\Roaming/jdtls-711a4d295c43b7523bf46a0af055adda72f57ff5 -Djdk.xml.maxGeneralEntitySizeLimit=0 -Djdk.xml.totalEntitySizeLimit=0
+java_class_path (initial): C:/Users/Admin/AppData/Local/Zed/extensions/work/java/jdtls/1.61.0/plugins/org.eclipse.equinox.launcher_1.8.0.v20260804-1928.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     bool AOTAdapterCaching                        = false                                  {diagnostic} {ergonomic}
+     bool AOTInvokeDynamicLinking                  = false                                  {diagnostic} {ergonomic}
+     bool AOTRecordTraining                        = false                                  {diagnostic} {ergonomic}
+     bool AOTReplayTraining                        = false                                  {diagnostic} {ergonomic}
+     bool AOTStubCaching                           = false                                  {diagnostic} {ergonomic}
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+     uint G1EagerReclaimRemSetThreshold            = 16                                   {experimental} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+     uint G1RemSetArrayOfCardsEntries              = 16                                   {experimental} {ergonomic}
+     uint G1RemSetHowlMaxNumBuckets                = 8                                    {experimental} {ergonomic}
+     uint G1RemSetHowlNumBuckets                   = 8                                    {experimental} {ergonomic}
+   size_t InitialHeapSize                          = 1073741824                                {product} {command line}
+     bool IntelJccErratumMitigation                = true                              {ARCH diagnostic} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MarkStackSizeMax                         = 536870912                                 {product} {ergonomic}
+   size_t MaxHeapSize                              = 4259315712                                {product} {ergonomic}
+ uint64_t MaxRAM                                   = 17032237056                               {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 1073741824                                {product} {command line}
+   size_t NonNMethodCodeHeapSize                   = 5898240                                {pd product} {ergonomic}
+   size_t NonProfiledCodeHeapSize                  = 122945536                              {pd product} {ergonomic}
+     bool PerfDisableSharedMem                     = true                                      {product} {ergonomic}
+   size_t ProfiledCodeHeapSize                     = 122945536                              {pd product} {ergonomic}
+   size_t ReservedCodeCacheSize                    = 251789312                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4259315712                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseCondCardMark                          = true                                      {product} {ergonomic}
+     bool UseFastUnorderedTimeStamps               = true                                 {experimental} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+      int X86ICacheSync                            = 2                                 {ARCH diagnostic} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Release file:
+<release file has not been read>
+Environment Variables:
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Adoptium\jdk-25.0.4.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps
+USERNAME=Admin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+TMP=C:\Users\Admin\AppData\Local\Temp
+TEMP=C:\Users\Admin\AppData\Local\Temp
+
+
+
+
+Compilation memory statistics disabled.
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+OS uptime: 0 days 5:03 hours
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10 microcode 0xf6, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, rdtscp, f16c
+Processor Information for processor 0
+  Max Mhz: 1800, Current Mhz: 1400, Mhz Limit: 1584
+Processor Information for processor 1
+  Max Mhz: 1800, Current Mhz: 1400, Mhz Limit: 1584
+Processor Information for processor 2
+  Max Mhz: 1800, Current Mhz: 1400, Mhz Limit: 1584
+Processor Information for processor 3
+  Max Mhz: 1800, Current Mhz: 1600, Mhz Limit: 1584
+Processor Information for processor 4
+  Max Mhz: 1800, Current Mhz: 1400, Mhz Limit: 1584
+Processor Information for processor 5
+  Max Mhz: 1800, Current Mhz: 1400, Mhz Limit: 1584
+Processor Information for processor 6
+  Max Mhz: 1800, Current Mhz: 1600, Mhz Limit: 1584
+Processor Information for processor 7
+  Max Mhz: 1800, Current Mhz: 1400, Mhz Limit: 1584
+
+Memory: 4k page, system-wide physical 16243M (5482M free)
+TotalPageFile size 41760M (AvailPageFile size 839M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 60M, peak: 1084M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (26.0.2+10-55) for windows-amd64 JRE (26.0.2+10-55), built on 2026-06-17T09:18:01Z with MS VC++ 17.13 (VS2022)
+
+END.
